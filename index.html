@@ -13,28 +13,43 @@
     <header>
         <div class="logo"><a href="index.html">Karetny Iakov</a></div>
         <nav>
-            <ul>
-                <li><a href="about.html">Обо мне</a></li>
-                <li><a href="projects.html">Проекты</a></li>
-                <li><a href="contact.html">Контакты</a></li>
-            </ul>
+            
         </nav>
     </header>
 
     <!-- Главный блок -->
     <main>
-        <!-- Главный экран -->
+
+
+
 <!-- Главный экран -->
 <section class="hero">
     <div class="hero-content">
-        <!-- Левая часть: Фото и приветствие -->
+        <!-- Левая часть: Фото, соцсети и приветствие -->
         <div class="hero-left">
+            <!-- Социальные иконки (слева от фото) -->
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/karetny-iakov-809a8a34a" target="_blank">
+                    <img src="assets/img/icons/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://donkirav.itch.io/" target="_blank">
+                    <img src="assets/img/icons/itch.png" alt="Itch.io">
+                </a>
+                <a href="https://t.me/ТВОЙ_TELEGRAM" target="_blank">
+                    <img src="assets/img/icons/telegram.png" alt="Telegram">
+                </a>
+            </div>
+
+            <!-- Фото профиля -->
             <img src="assets/img/profile.png" alt="Karetny Iakov" class="profile-photo">
+
+            <!-- Приветствие -->
             <h1>Привет, я <span class="highlight">Karetny Iakov</span></h1>
             <p>Unreal Engine Developer (C++ / Blueprints)</p>
+
+            <!-- Кнопка -->
             <div class="buttons">
-                <a href="projects.html" class="btn">Мои проекты</a>
-                <a href="contact.html" class="btn secondary">Связаться</a>
+                <a href="#projects" class="btn">Связаться</a>
             </div>
         </div>
 
@@ -51,6 +66,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 
 
@@ -95,17 +113,126 @@
 </section>
 
 
-        <!-- Блок с соцсетями -->
-        <section class="social-links">
-            <h2>Мои профили</h2>
-            <div class="social-buttons">
-                <a href="https://github.com/ТВОЙ_GITHUB" target="_blank" class="btn">GitHub</a>
-                <a href="https://www.linkedin.com/in/karetny-iakov-809a8a34a" target="_blank" class="btn">LinkedIn</a>
-                <a href="https://donkirav.itch.io/" target="_blank" class="btn">Itch.io</a>
-                <a href="https://t.me/ТВОЙ_TELEGRAM" target="_blank" class="btn secondary">Telegram</a>
+<!-- Секция "Проекты" -->
+<section class="projects-timeline">
+    <h2>Опыт работы и проекты</h2>
+
+    <div class="timeline-container">
+
+        <!-- Коммерческие проекты -->
+        <div class="timeline-wrapper">
+            <h3 class="timeline-title">Коммерческие проекты</h3>
+            <div class="timeline-column">
+                <div class="timeline-scroll">
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">CoreBlocks</div>
+                        <div class="timeline-content">
+                            <h3>VoyageA|R</h3>
+                            <p>Разработка системы сложной кастомизации игровых объектов с привязкой к серверу хранения данных. 
+                               Включала доработку плагинов и модификацию движка для корректной работы.</p>
+                            <a href="https://coreblocks.io/" class="btn" target="_blank">Сайт компании</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">CoreBlocks</div>
+                        <div class="timeline-content">
+                            <h3>.CORE, Cybercrew</h3>
+                            <p>Участие в разработке внутренних игровых проектов компании. Разработка механик взаимодействия, 
+                               геймплейных элементов, сетевого кода и тестирование.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Leon Media</div>
+                        <div class="timeline-content">
+                            <h3>Customizable Drivable Blueprint System</h3>
+                            <p>Создание плагина для Unreal Engine с системой управления транспортом. 
+                               Включало проработку кастомизации автомобиля, управления движением и UI.</p>
+                            <a href="#" class="btn" target="_blank">Ссылка на плагин</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">EvoFilms</div>
+                        <div class="timeline-content">
+                            <h3>Тактический шутер (Demo)</h3>
+                            <p>Декомпозиция проекта, составление плана разработки. Разработка сложного AI противников и союзников, 
+                               реализация системы оружия, анимаций и механик стрельбы.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Space Pinguin</div>
+                        <div class="timeline-content">
+                            <h3>Архитектурная визуализация</h3>
+                            <p>Разработка интерактивных виртуальных прогулок, настройка освещения, интеграция системы смены дня и ночи, 
+                               динамическое изменение погоды.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">ViRoom</div>
+                        <div class="timeline-content">
+                            <h3>ViRoom</h3>
+                            <p>Разработка новых механик для 3D-конструктора интерьера. Внедрение панорамных обзоров, доработка режима камер, 
+                               системы сохранения скриншотов и видео.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <!-- Инди проекты -->
+        <div class="timeline-wrapper">
+            <h3 class="timeline-title">Инди-проекты</h3>
+            <div class="timeline-column">
+                <div class="timeline-scroll">
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Indie</div>
+                        <div class="timeline-content">
+                            <h3>Voodoo MOBA</h3>
+                            <p>Командный MOBA-проект. Разработка всех игровых механик: боевая система на GAS, AI противников, магазин предметов, балансировка.</p>
+                            <a href="https://donkirav.itch.io/voodoo-moba" class="btn" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Indie</div>
+                        <div class="timeline-content">
+                            <h3>Escape From Maze</h3>
+                            <p>Рогалик с процедурной генерацией лабиринтов и пошаговой боевой системой. Разработка механик боя, навигации AI и управления ресурсами.</p>
+                            <a href="https://donkirav.itch.io/are-you-ready-for-new-world" class="btn" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Indie</div>
+                        <div class="timeline-content">
+                            <h3>Live Fire Live</h3>
+                            <p>Survival-игра в лесной локации. Разработка механик выживания, движения персонажа, взаимодействия с окружением.</p>
+                            <a href="https://sayurinyooko.itch.io/live-fire-live" class="btn" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Indie</div>
+                        <div class="timeline-content">
+                            <h3>Dice Valgalla</h3>
+                            <p>Головоломка с механикой вращения геометрических фигур. Разработка системы передвижения и взаимодействия объектов с окружающей средой.</p>
+                            <a href="https://aksolotled.itch.io/dice-valgalla" class="btn" target="_blank">Подробнее</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- Футер -->
     <footer>

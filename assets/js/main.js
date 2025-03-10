@@ -7,3 +7,50 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".profile-photo", { opacity: 0, scale: 0.8, duration: 1 });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".project-slide");
+    let currentSlide = 0;
+  
+    const nextButton = document.querySelector(".slider-next");
+    const prevButton = document.querySelector(".slider-prev");
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+  
+    nextButton.addEventListener("click", function() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+  
+    prevButton.addEventListener("click", function() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+  });
+
+  
+  const slides = document.querySelectorAll('.project-slide');
+  let currentIndex = 0;
+  
+  function updateSlider() {
+      slides.forEach((slide, index) => {
+          slide.style.display = index === currentIndex ? 'block' : 'none';
+      });
+  }
+  
+  document.querySelector('.slider-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+  });
+  
+  document.querySelector('.slider-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+  });
+  
+  // Первоначальный вызов
+  updateSlider();
+    

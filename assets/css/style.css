@@ -55,6 +55,7 @@ nav ul li a:hover {
     color: #FFD700; /* Жёлтый при наведении */
 }
 
+
 /* 🔹 Главный экран (Hero Section) */
 .hero {
     display: flex;
@@ -63,6 +64,7 @@ nav ul li a:hover {
     text-align: left;
     margin-top: 10vh; /* Опускаем секцию */
     padding: 100px 10%;
+    position: relative;
 }
 
 /* Контейнер, делящий секцию на две части */
@@ -74,42 +76,66 @@ nav ul li a:hover {
     gap: 50px;
 }
 
-/* Левая часть: Фото и приветствие */
+/* 🔹 Левая часть: Фото и приветствие */
 .hero-left {
     flex: 1;
     max-width: 40%;
     text-align: center;
+    position: relative; /* Привязываем соцсети именно к этой секции */
 }
 
-/* Фото профиля */
+/* 🔹 Социальные иконки (фиксированные относительно фото) */
+.hero-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    left: -50px; /* Подвигаем ближе к фото */
+    top: 10px; /* Поднимаем вверх */
+    z-index: 10;
+}
+
+/* 🔹 Иконки соцсетей */
+.hero-socials a img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0.8) invert(1); /* Белый цвет */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* 🔹 Эффект наведения */
+.hero-socials a:hover img {
+    transform: scale(1.2);
+
+}
+
+/* 🔹 Фото профиля */
 .profile-photo {
-    width: 400px; /* Оставляем оригинальный размер */
-    height: auto; /* Автоматическая высота */
-    border-radius: 0; /* Делаем квадратным */
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
     display: block;
     margin: 0 auto 20px;
-    box-shadow: none; /* Убираем тень */
-    border: none; /* Убираем рамку */
-    padding: 0; /* Убираем внутренний отступ */
-    background-color: transparent; /* Фон отсутствует */
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
 }
 
-/* Заголовок */
+/* 🔹 Заголовок */
 .hero-left h1 {
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.4);
 }
 
-/* Подзаголовок */
+/* 🔹 Подзаголовок */
 .hero-left p {
     font-size: 1.2em;
     color: #E0E0E0;
     opacity: 0.9;
 }
 
-/* Кнопки */
+/* 🔹 Кнопки */
 .buttons {
     margin-top: 20px;
     display: flex;
@@ -135,31 +161,27 @@ nav ul li a:hover {
 }
 
 /* 🔹 Правая часть: "Обо мне" */
-/* 🔹 Правая часть: "Обо мне" */
 .hero-right {
     flex: 1;
     max-width: 50%;
     background: #1E1E1E;
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.3);
     color: #E0E0E0;
 }
 
-/* Заголовок */
 .hero-right h2 {
-    font-size: 2em; /* Увеличиваем заголовок */
+    font-size: 1.8em;
     color: #FFD700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* Обычный текст */
 .hero-right p {
-    font-size: 1.4em; /* Увеличиваем текст */
-    line-height: 1.8; /* Добавляем больше расстояния между строками */
-    opacity: 1; /* Делаем текст четче */
+    font-size: 1.9em;
+    line-height: 1.6;
+    opacity: 0.9;
 }
-
 
 /* 🔹 Адаптация для мобильных устройств */
 @media (max-width: 1024px) {
@@ -175,8 +197,159 @@ nav ul li a:hover {
     .hero-right {
         padding: 30px;
     }
+
+    /* Соцсети переходят вниз */
+    .hero-socials {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        margin-bottom: 20px;
+    }
 }
 
+
+
+/* 🔹 Основная секция */
+.projects-timeline {
+    background: #1E1E1E;
+    padding: 50px 5%;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* 🔹 Заголовок секции */
+.projects-timeline h2 {
+    color: #FFD700;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 🔹 Контейнер с двумя колонками */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* 🔹 Контейнер для заголовка и списка проектов */
+.timeline-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+/* 🔹 Заголовки столбцов (вынесены из скролла) */
+.timeline-title {
+    font-size: 1.8em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Контейнер таймлайна (с прокруткой) */
+.timeline-column {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+    max-height: 500px; /* Ограничиваем высоту */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    text-align: left;
+    width: 100%;
+}
+
+/* 🔹 Полоса прокрутки */
+.timeline-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.timeline-column::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
+}
+
+.timeline-column::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* 🔹 Элементы таймлайна */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* 🔹 Дата */
+.timeline-date {
+    min-width: 100px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFD700;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* 🔹 Контент проекта */
+.timeline-content {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* 🔹 Заголовок проекта */
+.timeline-content h3 {
+    font-size: 1.3em;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+/* 🔹 Описание */
+.timeline-content p {
+    font-size: 1em;
+    color: #E0E0E0;
+    opacity: 0.9;
+}
+
+/* 🔹 Кнопка "Подробнее" */
+.timeline-content .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #FFD700;
+    color: #121212;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.timeline-content .btn:hover {
+    background: #E6C200;
+}
+
+/* 🔹 Адаптация под мобильные устройства */
+@media (max-width: 1024px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-column {
+        width: 100%;
+    }
+}
+
+  
 
 /* Футер */
 footer {
