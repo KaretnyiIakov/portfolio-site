@@ -1,0 +1,287 @@
+/* Общие стили */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;  /* Темный фон */
+    color: #E0E0E0;  /* Светлый текст */
+    text-align: center;
+}
+
+/* Хедер */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: #1E1E1E; /* Графитовый фон */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFD700; /* Золотистый цвет */
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin-right: 20px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #E0E0E0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Жёлтый при наведении */
+}
+
+/* 🔹 Главный экран (Hero Section) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin-top: 10vh; /* Опускаем секцию */
+    padding: 100px 10%;
+}
+
+/* Контейнер, делящий секцию на две части */
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Левая часть: Фото и приветствие */
+.hero-left {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
+}
+
+/* Фото профиля */
+.profile-photo {
+    width: 400px; /* Оставляем оригинальный размер */
+    height: auto; /* Автоматическая высота */
+    border-radius: 0; /* Делаем квадратным */
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: none; /* Убираем тень */
+    border: none; /* Убираем рамку */
+    padding: 0; /* Убираем внутренний отступ */
+    background-color: transparent; /* Фон отсутствует */
+}
+
+/* Заголовок */
+.hero-left h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.4);
+}
+
+/* Подзаголовок */
+.hero-left p {
+    font-size: 1.2em;
+    color: #E0E0E0;
+    opacity: 0.9;
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: #FFD700;
+    color: #121212;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #E6C200;
+    transform: scale(1.05);
+}
+
+/* 🔹 Правая часть: "Обо мне" */
+/* 🔹 Правая часть: "Обо мне" */
+.hero-right {
+    flex: 1;
+    max-width: 50%;
+    background: #1E1E1E;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.3);
+    color: #E0E0E0;
+}
+
+/* Заголовок */
+.hero-right h2 {
+    font-size: 2em; /* Увеличиваем заголовок */
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+/* Обычный текст */
+.hero-right p {
+    font-size: 1.4em; /* Увеличиваем текст */
+    line-height: 1.8; /* Добавляем больше расстояния между строками */
+    opacity: 1; /* Делаем текст четче */
+}
+
+
+/* 🔹 Адаптация для мобильных устройств */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left, .hero-right {
+        max-width: 100%;
+    }
+
+    .hero-right {
+        padding: 30px;
+    }
+}
+
+
+/* Футер */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+/* 🔹 Блок "Навыки" */
+.skills {
+    background: #1E1E1E;
+    padding: 50px 5%;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px; /* Ограничиваем ширину */
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Заголовок */
+.skills h2 {
+    color: #FFD700;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 🔹 Грид-сетка для навыков */
+.skills-grid {
+    display: grid !important;  /* Принудительно включаем grid */
+    grid-template-columns: repeat(3, 1fr); /* ТРИ КОЛОНКИ */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* Центрируем блок */
+    padding: 10px;
+}
+
+/* 🔹 Карточка навыка */
+.skill-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    width: 100%; /* Делаем карточки адаптивными */
+    max-width: 250px; /* Ограничиваем ширину */
+    margin: 0 auto; /* Центрируем карточки */
+}
+
+/* 🔹 Иконки навыков */
+.skill-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    filter: brightness(0.9) invert(1); /* Делаем их светлее */
+}
+
+/* 🔹 Текст внутри карточки */
+.skill-card p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #E0E0E0;
+}
+
+/* 🔹 Анимация при наведении */
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #FFD700;
+    box-shadow: 0px 6px 15px rgba(255, 215, 0, 0.5);
+    cursor: pointer;
+}
+
+.skill-card:hover img {
+    filter: brightness(1) invert(0);
+}
+
+.skill-card:hover p {
+    color: #121212;
+}
+
+/* 🔹 Адаптация для мобильных устройств */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки на планшетах */
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr); /* Одна колонка на телефонах */
+    }
+}
+
+
+
+
